@@ -1,0 +1,19 @@
+const int LDRPin = D7;  
+
+void setup() {
+  Serial.begin(9600);            
+  pinMode(LDRPin, INPUT_PULLUP); 
+}
+
+void loop() {
+  int sensorValue = digitalRead(LDRPin); 
+  
+  Serial.print("Light Level: ");
+  if (sensorValue == HIGH) {
+    Serial.println("Low Light Detected");
+  } else {
+    Serial.println("Bright Light Detected");
+  }
+  
+  delay(1000); 
+}
